@@ -1,5 +1,6 @@
 require 'rubygems'
 require 'bundler/setup'
+require 'yaml'
 Bundler.require :default
 
 CREDENTIALS = File.open('./keys.yml') { |y| YAML::load(y) }
