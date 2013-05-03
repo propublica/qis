@@ -1,0 +1,40 @@
+<style>
+  #container {
+    font-family:helvetica,arial,sans-serif;
+    margin:0 auto;
+  }
+  ul li {
+    width:200px;
+    float:left;
+    padding:3px 8px 10px 8px;
+    border-top:2px solid #999;
+  }
+  ul li img {
+    width:100%;
+  }
+  ul li h3 {
+    padding:0;margin:0;
+  }
+  ul li p {
+    height:100px;
+  }
+  ul li p.timestamp {
+    height:20px;
+  }
+</style>
+
+<div id="container">
+<ul> 
+<% @results["data"].each do |photo| %>
+
+  <li>
+    <h3><%= photo["user"]["username"] %></h3>
+    <% if photo["caption"] %><p><%= photo["caption"]["text"] %></p><% end %>
+    <p class="timestamp"><a href="<%= photo["link"] %>"><%= Time.at(photo["created_time"].to_i).strftime("%m/%d/%Y %H:%M %P") %></a></p>
+    <img src="<%= photo["images"]["standard_resolution"]["url"] %>">
+  </li>
+
+<% end %>
+
+</ul>
+</div>
