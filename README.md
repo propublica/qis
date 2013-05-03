@@ -11,10 +11,7 @@ d88' `888  `888  d88(  "8
       "
 ```
 
-
-Quick Instagram search tool.
-
-Requires [Sinatra](http://www.sinatrarb.com/)
+Search Instagram for photos taken at a [given place and time](http://www.propublica.org/nerds/item/a-super-simple-tool-to-search-instagram-by-time-and-location).
 
 ## Quick Start
 
