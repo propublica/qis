@@ -18,11 +18,21 @@ Requires [Sinatra](http://www.sinatrarb.com/)
 
 ## Quick Start
 
-0. Install necessary rubygems: `gem install sinatra json rest-client`
+0. `bundle install`
 
-1. Register for a new [Instagram client application](http://instagram.com/developer/clients/register/) and set your OAuth redirect_uri to `http://localhost:4567/`. Fill your `client_id` and `client_secret` into the appropriate constants in app.rb.
+1. Register for a new [Instagram client application](http://instagram.com/developer/clients/register/) and set your OAuth redirect_uri to `http://localhost:4567/`.
 
-2. Get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key). Put that in the goog_geocoder.rb file where it says "YOURS."
+2. Get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key).
 
-2. Run using 'ruby app.rb' or however you like running Sinatra apps.
+3. Create a `keys.yml` file in the root of the app, and set it like so:
+
+```
+instagram_client_id: YOUR_KEY
+instagram_secret: YOUR_KEY
+google_client_id: YOUR_KEY
+google_key: YOUR_KEY
+
+```
+
+2. Run using `ruby app.rb` or however you like running Sinatra apps.
 
