@@ -18,11 +18,7 @@ Requires [Sinatra](http://www.sinatrarb.com/)
 
 ## Quick Start
 
-0. Install necessary rubygems
-
-```
-gem install sinatra json rest-client
-```
+0. Install necessary rubygems: `gem install sinatra json rest-client`
 
 1. Register for a new [Instagram client application](http://instagram.com/developer/clients/register/) and set your OAuth redirect_uri to `http://localhost:4567/`. Fill your `client_id` and `client_secret` into the appropriate constants in app.rb.
 
