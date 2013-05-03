@@ -31,7 +31,6 @@ instagram_client_id: YOUR_KEY
 instagram_secret: YOUR_KEY
 google_client_id: YOUR_KEY
 google_key: YOUR_KEY
-
 ```
 
 2. Run using `ruby app.rb` or however you like running Sinatra apps.
