@@ -6,8 +6,8 @@ require 'json'
 
 
 class GoogGeocoder
-  CLIENT_ID = "YOURS"
-  KEY = "YOURS"
+  CLIENT_ID = ::CREDENTIALS['google_client_id']
+  KEY = ::CREDENTIALS['google_key']
   PATH = "/maps/api/geocode/json?sensor=false&client=#{CLIENT_ID}"
 
   def initialize(address)

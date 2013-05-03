@@ -1,0 +1,153 @@
+<!doctype html>
+<html>
+  <head>
+    <title>QIS</title>
+
+    <style>
+      /* http://meyerweb.com/eric/tools/css/reset/ 
+         v2.0 | 20110126
+         License: none (public domain)
+      */
+
+      html, body, div, span, applet, object, iframe,
+      h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+      a, abbr, acronym, address, big, cite, code,
+      del, dfn, em, img, ins, kbd, q, s, samp,
+      small, strike, strong, sub, sup, tt, var,
+      b, u, i, center,
+      dl, dt, dd, ol, ul, li,
+      fieldset, form, label, legend,
+      table, caption, tbody, tfoot, thead, tr, th, td,
+      article, aside, canvas, details, embed, 
+      figure, figcaption, footer, header, hgroup, 
+      menu, nav, output, ruby, section, summary,
+      time, mark, audio, video {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+      }
+      /* HTML5 display-role reset for older browsers */
+      article, aside, details, figcaption, figure, 
+      footer, header, hgroup, menu, nav, section {
+        display: block;
+      }
+      body {
+        line-height: 1;
+      }
+      strong {
+        font-weight:bold;
+      }
+      ol, ul {
+        list-style: none;
+      }
+      blockquote, q {
+        quotes: none;
+      }
+      blockquote:before, blockquote:after,
+      q:before, q:after {
+        content: '';
+        content: none;
+      }
+      table {
+        border-collapse: collapse;
+        border-spacing: 0;
+      }
+
+
+      /* QIS */
+
+      body { 
+        background:#f9f9f9; 
+      }
+      h1, h2, h3 {
+        font-weight:bold;
+      }
+      h1 {
+        font-size:24px;
+      }
+
+      h2 {
+        font-size:18px;
+      }
+
+      #container {
+        font-family:helvetica,arial,sans-serif;
+        margin:0 auto;
+        width:80%;
+        background:#fff;
+        background: #fff;
+        -webkit-box-shadow: #CECECE 0px 0px 15px;
+        -moz-box-shadow: #CECECE 0px 0px 15px;
+        overflow: auto;
+        padding:20px;
+      }
+      form {
+        padding:15px 0 15px 0;
+      }
+      .form-section {
+        margin-bottom:15px;
+      }
+      .form-section h2 {
+        margin-bottom:5px;
+      }
+      input {
+        font-size:18px;
+        font-family:"Menlo Sans","Courier";
+      }
+      ul li {
+        width:31%;
+        float:left;
+        padding:3px 20px 10px 0;
+        border-top:2px solid #999;
+      }
+      ul li img {
+        width:100%;
+      }
+      ul li h3 {
+        padding:0;margin:0;
+      }
+      ul li p {
+        height:150px;
+      }
+      ul li p.timestamp {
+        height:20px;
+      }
+      .fancy_btn {
+        width:200px;
+        padding: 5px;
+        background: #fff;
+        -webkit-border-radius: 04px;
+        -moz-border-radius: 04px;
+        border-radius: 04px;
+        font-weight: bold;
+        border: 1px solid #999;
+        cursor: pointer;
+        user-select: none;
+        -moz-user-select: none;
+        -khtml-user-select: none;
+        -webkit-box-shadow: #cecece 0 0 2px;
+        -moz-box-shadow: #cecece 0 0 2px;
+        color: black;
+        -webkit-user-select: none;
+        text-shadow: 1px 1px 0 white;
+        background: -webkit-gradient(linear,left top,left bottom,from(#fff),to(#f0f0f0));
+        background: -moz-linear-gradient(top,#fff,#f0f0f0);
+        font-family: Helvetica,arial,sans-serif;
+        font-weight: bold;        
+      }
+    .error {
+      padding:15px;
+    }
+    .infinite_frowns {
+      color: #660000;
+      background: #FFEEEE;
+    }
+  </style>
+  </head>
+  <body>
+    <%= yield %>
+  </body>
+</html>

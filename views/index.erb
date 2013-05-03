@@ -1,20 +1,31 @@
-<h1>Instagram Search</h1>
+<div id="container">
+  <h1>QIS (Quick Instagram Search)</h1>
 
-<form action="/result" method="post">
-<h2>Start Date/Time</h2>
-<input type="date" name="start_date">
-<input type="time" name="start_time" value="12:00">
+  <form action="/result" method="post">
+    <div class="form-section">
+      <h2>Start Date/Time</h2>
+      <input type="date" name="start_date">
+      <input type="time" name="start_time" value="12:00">
+    </div>
+    
+    <div class="form-section">
+      <h2>End Date/Time</h2>
+      <input type="date" name="end_date">
+      <input type="time" name="end_time" value="12:00">
+    </div>
 
-<h2>End Date/Time</h2>
-<input type="date" name="end_date">
-<input type="time" name="end_time" value="12:00">
+    <div class="form-section">
+      <h2>Address, Location, Landmark</h2>
+      <input type="text" name="place" value="place">
+    </div>
 
-<h2>Address, Location, Landmark</h2>
-<input type="text" name="place" value="place">
+    <div class="form-section">
+      <h2>Distance Range from Place in meters</h2>
+      <input type="text" value="1000" name="distance">
+    </div>
 
-<h2>Distance Range from Place in meters</h2>
-<input type="text" value="1000" name="distance">
-<br />
-<br />
-<input type="submit">
-</form>
+    <div class="form-section">
+      <input type="submit" class="fancy_btn">
+    </div>
+  </form>
+</div>
