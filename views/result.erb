@@ -1,4 +1,7 @@
 <div id="container">
+    <h1 id="results">Results</h1>
+
+    <img id="map" src="http://maps.google.com/maps/api/staticmap?center=<%= @search_params[:lat] %>,<%= @search_params[:lng] %>&zoom=13&size=120x120&sensor=false">
   <ul> 
   <% @results["data"].each do |photo| %>
     <li>
