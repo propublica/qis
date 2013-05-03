@@ -1,4 +1,6 @@
 qis
 ===
 
-Quick Instagram search tool
+Quick Instagram search tool.
+
+Requires [Sinatra](http://www.sinatrarb.com/).
