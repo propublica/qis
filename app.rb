@@ -10,7 +10,7 @@ require './goog_geocoder'
 
 CLIENT_ID     = CREDENTIALS['instagram_client_id']
 CLIENT_SECRET = CREDENTIALS['instagram_secret']
-REQUEST_URI   = "http://localhost:4567/"
+REQUEST_URI   = CREDENTIALS['root_uri']
 
 class QIS < Sinatra::Base
   enable :sessions

@@ -27,6 +27,7 @@ Requires [Sinatra](http://www.sinatrarb.com/)
 3. Create a `keys.yml` file in the root of the app, and set it like so:
 
 ```
+root_uri: http://localhost:4567/
 instagram_client_id: YOUR_KEY
 instagram_secret: YOUR_KEY
 google_client_id: YOUR_KEY

@@ -1,3 +1,3 @@
 <div id="container">
-  <p class="error infinite_frowns"><strong>Error:</strong> <%= @error["meta"] ? @error["meta"]["error_message"] : @error["error_message"] %>&nbsp;&nbsp;<a href="/">Back &raquo;</a></p>
+  <p class="error infinite_frowns"><strong>Error:</strong> <%= @error["meta"] ? @error["meta"]["error_message"] : @error["error_message"] %>&nbsp;&nbsp;<a href="<%= CREDENTIALS['root_uri'] %>">Back &raquo;</a></p>
 </div>
