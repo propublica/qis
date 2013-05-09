@@ -7,8 +7,8 @@ require 'json'
 
 class GoogGeocoder
   CLIENT_ID = ::CREDENTIALS['google_client_id']
-  KEY = ::CREDENTIALS['google_key']
-  PATH = "/maps/api/geocode/json?sensor=false&client=#{CLIENT_ID}"
+  KEY       = ::CREDENTIALS['google_key']
+  PATH = CLIENT_ID && KEY ? "/maps/api/geocode/json?sensor=false&client=#{CLIENT_ID}" : "/maps/api/geocode/json?sensor=false"
 
   def initialize(address)
     @address = address
@@ -23,8 +23,12 @@ class GoogGeocoder
   private
 
   def geocode!
-    sign!
-    @resp = Net::HTTP.get("maps.googleapis.com", "#{@path}&signature=#{@key}")
+    if CLIENT_ID
+      sign!
+      @resp = Net::HTTP.get("maps.googleapis.com", "#{@path}&signature=#{@key}")
+    else
+      @resp = Net::HTTP.get("maps.googleapis.com", "#{@path}")      
+    end
   end
 
   def sign!
