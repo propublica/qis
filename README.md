@@ -19,16 +19,16 @@ Search Instagram for photos taken at a [given place and time](http://www.propubl
 
 1. Register for a new [Instagram client application](http://instagram.com/developer/clients/register/) and set your OAuth redirect_uri to `http://localhost:4567/`.
 
-2. Get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key).
+2. [Optional] Get a [Google Maps API key](https://developers.google.com/maps/documentation/javascript/tutorial#api_key).
 
-3. Create a `keys.yml` file in the root of the app, and set it like so:
+3. Create a `keys.yml` file in the root of the app, and set it like so. If you don't have a Google Maps API key, leave the `google_client_id` and `google_key` fields blank.
 
 ```
 root_uri: http://localhost:4567/
 instagram_client_id: YOUR_KEY
 instagram_secret: YOUR_KEY
-google_client_id: YOUR_KEY
-google_key: YOUR_KEY
+google_client_id: YOUR_KEY or BLANK
+google_key: YOUR_KEY or BLANK
 ```
 
 2. Run using `ruby app.rb` or however you like running Sinatra apps.
