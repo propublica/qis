@@ -46,12 +46,27 @@ class QIS < Sinatra::Base
         @search_params[:lat] = geometry["lat"]
       end
     end
-    @search_params[:text] = params["text"] if params["text"]
+    @search_params[:text]          = params["text"] if params["text"]
     @search_params[:min_timestamp] = Time.parse("#{params["start_date"]} #{params["start_time"]}").to_i if params["start_date"] && params["start_time"]
     @search_params[:max_timestamp] = Time.parse("#{params["end_date"]} #{params["end_time"]}").to_i if params["end_date"] && params["end_time"]
-    @search_params[:distance] = params["distance"] if params["distance"]
+    @search_params[:distance]      = params["distance"] if params["distance"]
+    @search_params[:user]          = params["user"] if params["user"] && params["user"].length > 0
 
-    results = RestClient.get("https://api.instagram.com/v1/media/search", {:params => @search_params.merge!({:access_token => session[:access_token]})})
+    if @search_params[:user]
+      users = JSON.parse(RestClient.get("https://api.instagram.com/v1/users/search", {:params => {:q => @search_params[:user], :count => 1, :access_token => session[:access_token]}}))
+      if users['data'].length > 0
+        user_id = users['data'][0]['id']
+        results = RestClient.get("https://api.instagram.com/v1/users/#{user_id}/media/recent", :params => {
+          :access_token  => session[:access_token],
+          :min_timestamp => @search_params[:min_timestamp],
+          :max_timestamp => @search_params[:max_timestamp],
+          :count => 1000
+        })
+      end
+    else
+      results = RestClient.get("https://api.instagram.com/v1/media/search", {:params => @search_params.merge!({:access_token => session[:access_token]})})
+    end
+
 
     @results = JSON.parse(results)
 
