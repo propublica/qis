@@ -16,7 +16,7 @@ class QIS < Sinatra::Base
   enable :sessions
   set :raise_errors, Proc.new { false }
   set :show_exceptions, false
-  
+
   get '/' do
     if !params["code"] && !session[:access_token]
       redirect "https://api.instagram.com/oauth/authorize/?client_id=#{CLIENT_ID}&redirect_uri=#{REQUEST_URI}&response_type=code"
@@ -65,7 +65,7 @@ class QIS < Sinatra::Base
         })
       end
     elsif @search_params[:tag]
-      results = RestClient.get("https://api.instagram.com/v1/tags/search", {:params => {:q => @search_params[:tag], :access_token => session[:access_token]}})
+      results = RestClient.get("https://api.instagram.com/v1/tags/#{@search_params[:tag]}/media/recent", {:params => {:access_token => session[:access_token], :count => 1000}})
     else
       results = RestClient.get("https://api.instagram.com/v1/media/search", {:params => @search_params.merge!({:access_token => session[:access_token]})})
     end
